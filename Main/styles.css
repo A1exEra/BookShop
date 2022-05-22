@@ -5,7 +5,14 @@ body {
   margin: 0px;
   padding: 0px;
   scroll-behavior: smooth;
-  background-color: #cbd18f;
+  background-image: url(../content/backgroundPaper.jpg);
+  background-repeat:repeat-y;
+  background-position: center;
+  background-size: contain;
+}
+*{
+  background-repeat: no-repeat ;
+  background-size: cover;
 }
 .header {
   display: flex;
@@ -13,7 +20,8 @@ body {
   height: 20vh;
   margin: 0px;
   padding: 10px;
-  background-color: #3a6b35;
+  /* background-color: #3a6b35; */
+  background-image: url(../content/buckled-book-2180047_1280.jpg);
   justify-content: space-between;
 }
 .logo {
@@ -45,13 +53,11 @@ p {
   padding: 5px;
   font-size: 2rem;
   text-decoration: none;
+  color: #123c69;
 }
 .main {
   margin: 0px;
   padding: 0px;
-  /* display: flex; */
-  /* flex-direction: row; */
-  /* background-color: #e3b448; */
 }
 .about {
   margin: 0px;
@@ -61,51 +67,329 @@ p {
   text-align: center;
   font-size: 2rem;
 }
-#catalog_info {
-  text-align: center;
-}
-.catalog_container {
+/*BOOK COLLECTION SECTION*/
+/* #catalog_info {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  text-align: center;
+} */
+.catalog_container {
+  /* display: flex;
+  flex-direction: row;
+  justify-content: space-between; */
   margin: 0px;
   padding: 20px;
-  scroll-behavior: smooth;
-  /* max-height: 80vh;
-    overflow-y: scroll; */
+ /* background-color: #EAE7DC; */
 }
-.scrollBar :last-child{
-  max-height: 70vh;
-    overflow-y: scroll;
+.catalog_container h3 {
+  padding: 0px;
+  margin: 20px;
+  font-size: 3rem;
 }
 .catalog_info {
-  display: flex;
-  justify-content: space-between;
-  flex: row;
-  flex-wrap: wrap;
   margin: 0px;
   padding: 20px;
+  font-size: 1.8rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  /* width: 100%; */
+  
 }
 .book_container {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  margin: 0px;
-  padding: 20px;
+  background-image: url(../content/paper1.jpg);
+  background-size: 110%;
+  background-position: center;
+  border: 10px solid #123c69;
+  border-radius: 30px;
+  margin: 10px;
+  padding: 10px;
+  width: 500px;
+  font-size: 2rem;
+  transition: all 150ms ease-in-out;
+}
+.book_container:hover {
+  box-shadow: 0 0 10px 10px #123c69, 0 0 10px 4px #123c69;
+}
+.book_title{
+  color: #123c69;
+  padding: 0px;
+  margin: 10px;
+}
+#addToCart{
+  box-shadow: 0 0 40px 40px #123c69 inset, 0 0 0 0 #123c69;
+  transition: all 150ms ease-in-out;
+  background-color: transparent;
+  border: 2px solid #123c69;
+  border-radius: 0.6em;
+  cursor: pointer;
+  font-size: 1rem;
+ border-color: #123c69;
+  /* color: #EEE2DC; */
+  font-weight: 400;
+  line-height: 1.5rem;
+  margin: 10px;
+  padding: 1rem 1.5rem;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.2rem;
+  
+}
+#addToCart:hover {
+  box-shadow: 0 0 10px 0 #123c69 inset, 0 0 10px 4px #123c69;
 }
 .book_container img {
-  width: 300px;
-  height: 500px;
+  padding: 0px;
+  margin: 10px;
+  margin-top: 20px;
+  width: 250px;
+  height: 350px;
+  border-radius: 10px;
+  transition: all 150ms ease-in-out;
+  box-shadow: 0 0 10px 10px #8e877e7d, 0 0 10px 4px #8e877e7d;
 }
-.footer {
-  display: flex;
-  justify-content: space-between;
+/* MODAL WINDOW*/
+.hidden{
+  display: none;
 }
-/*.<<<<<<<<<FOOTER>>>>>>>>>>>>>>>>>>*/
-.footer{
+.modal{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  background-image: url(../content/paper1.jpg);
+  background-size:110%;
+  background-position: center;
+  padding: 6rem;
+  border-radius: 20px;
+  box-shadow: 0 3rem 5rem #000;
+  z-index: 15;
+}
+.open_modal{
+  font-size: 1rem;
+  /* color: #EEE2DC; */
+  border: 2px solid #123c69;
+  border-radius: 0.6em;
+  cursor: pointer;
+  font-weight: 400;
+  line-height: 1.5rem;
+  margin: 10px;
+  padding: 1rem 1.5rem;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.2rem;
+    background: #123c69;
+    background: linear-gradient(0deg, #123c69 0%, #6c6d7c 100%);
+    z-index: 10;
+  }
+.open_modal:hover{
+  box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
+                -4px -4px 6px 0 rgba(116, 125, 136, .5), 
+      inset -4px -4px 6px 0 rgba(255,255,255,.2),
+      inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
+}
+.close_modal {
+  position: absolute;
+  top: 1.2rem;
+  right: 2rem;
+  font-size: 5rem;
+  color: #333;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+.overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+  z-index: 5;
+}
+/*<<<<<<<<<<<<<<<SHOPPING SECTION>>>>>>>>>*/
+.shoppingSection{
+  text-align: center;
+  font-size: 2rem;
+  letter-spacing: 0.1rem;
+  /* background: #EAE7DC; */
+  
+}
+.shoppingList{
+  background-image: url(../content/old-953394_640.jpg);
+  background-position: center;
+  padding: 0px;
+  margin: 10px;
+  margin-left: auto;
+  margin-right: auto;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  width: 90%;
+  border: 10px solid #123c69;
+  border-radius: 2rem;
+  box-shadow: 0 0 10px 10px #8e877e7d, 0 0 10px 4px #8e877e7d;
+}
+.shoppingSection h3 {
+  padding: 10px;
+  margin: 0px;
+  /* color:#333; */
+}
+.shopImg{
+  /* position: absolute; */
+  padding: 0px;
+  margin: 10px;
+  margin-top: 20px;
+  width: 250px;
+  height: 350px;
+  border-radius: 10px;
+  transition: all 150ms ease-in-out;
+  box-shadow: 0 0 10px 10px #8e877e7d, 0 0 10px 4px #8e877e7d;
+}
+.shopImg:hover {
+  box-shadow: 0 0 10px 10px #123c69, 0 0 10px 4px #123c69;
+}
+.remove_shop_item{
+  position: absolute;
+  /* top: 0px;
+  right: 0px; */
+  margin: 10px;
+  padding: 0px;
+  /* z-index: 10; */
+  font-size: 3rem;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+.removeContainer{
+  display: flex;
+  flex-direction: row;
+  /* background-color: pink; */
+  padding: 0px;
+  margin: 0px;
+  overflow:hidden;
+}
+.shopBookInfo{
+  padding: 0px;
+  margin: 10px;
+  text-align: start;
+  font-size: 1.5rem;
+  font-weight: 700;
+  max-width: 200px;
+  /* background: #123c69; */
+}
+.shopBookInfo p{
+  color: #000;
+}
+.confirmOrder{
+  box-shadow: 0 0 40px 40px #123c69 inset, 0 0 0 0 #123c69;
+  transition: all 150ms ease-in-out;
+  background-color: transparent;
+  border: 2px solid #123c69;
+  border-radius: 0.6em;
+  cursor: pointer;
+  font-size: 1rem;
+ border-color: #123c69;
+  /* color: #EEE2DC; */
+  margin: 10px;
+  padding: 1rem 1.5rem;
+}
+.confirmOrder a{
+  text-decoration: none;
+  font-weight: 400;
+  line-height: 1.5rem;
+  margin: 10px;
+  padding: 1rem 1.5rem;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.2rem;
+  color: bisque;
+
+
+}
+.confirmOrder:hover {
+  box-shadow: 0 0 10px 0 #123c69 inset, 0 0 10px 4px #123c69;
+  color: #123c69;
+}
+/*.<<<<<<<<<FOOTER>>>>>>>>>>>>>>>>>>*/
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0px;
+    padding: 25px;
+  /* background: #EAE7DC */
+}
+#footer_contacts {
+  margin: 30px;
+  padding: 20px;
+  padding-top: 100px;
+}
+#footer_location {
+  margin: 0px;
+  padding: 20px;
+  text-decoration: none;
+}
+#footer_img img{
+  width: 300px;
+  margin: 0px;
+  padding: 100px 10px 10px 10px;
+}
+/* footer h3 {
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 130%;
+
+  letter-spacing: 0.06em;
+  color: #ffffff;
+  padding: 0px;
+  margin: 0px;
+} */
+footer h4 {
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 115%;
+  letter-spacing: 0.06em;
+}
+footer a {
+  display: flex;
+  flex-direction: row;
+  text-decoration: none;
+  color: black
+}
+.footer_info {
+  display: block;
+  margin: 0px;
+  padding: 0px;
+  /* background-color: aqua; */
+  font-size: 1.5rem;
+  text-align: start;
+}
+.footer_icons img {
+  width: 100px;
+  padding: 10px;
+  margin: 0px;
+  margin-right: 10px;
+}
+.footer_icons h4 {
+  margin: 0px;
+  padding: 10px;
 }
 /* <<<<<<<<<<<<Colors>>>>>>>>>>>>>>>>
 mustard_color: #E3B448, 

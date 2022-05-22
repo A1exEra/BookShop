@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../Form/formStyle.css" />
+    <script defer src="../Form/formScript.js"></script>
+    <title>Checkout Form</title>
+  </head>
+  <body>
+    <form action="#" id="form" method="post">
+    <fieldset>
+      <legend>Shipping details:</legend>
+      <ul>
+        <li>
+          <label for="name">Name:</label>
+          <input id="name"
+            type="text"
+            name="user_name"
+            id="name"
+            required
+            minlength="4"
+            autofocus
+          />
+          <span></span>
+        </li>
+        <li>
+          <label for="lastName">Last Name:</label>
+          <input id="lastName"
+            type="text"
+            name="user_lastName"
+            id="lastName"
+            required
+            minlength="5"
+          />
+          <span></span>
+        </li>
+        <li>
+          <label for="date">Delivery Date(not earlier than next day):</label>
+          <input id="date" name="date" type="date" required />
+          <span></span>
+        </li>
+        <li>
+          <label for="street">Street:</label>
+          <input id="street" type="text" name="street" id="street" required minlength="5" />
+          <span></span>
+        </li>
+        <li>
+          <label for="houseNum">House Number:</label>
+          <input id="house" type="number" name="houseNum" id="houseNum" required min="1" />
+          <span></span>
+        </li>
+        <li>
+          <label for="flatNum">Flat Number:</label>
+            <input id="flat" type="text" name="flatNum" id="flatNum" required pattern="^\d{1,}-|\d+$"/>
+          <span></span>
+        </li>
+      </fieldset>
+        <fieldset>
+          <legend>Payment:</legend>
+          <ul>
+            <li>
+              <label for="card">
+                <input type="radio" id="card" name="payment" value="card" required/>
+                Card
+              </label>
+            </li>
+            <li>
+              <label for="cash">
+                <input type="radio" id="cash" name="payment" value="cash" />
+                Cash
+              </label>
+            </li>
+          </ul>
+        </fieldset>
+        <fieldset id="checkbox">
+          <legend>Choose 2 gifts(optional):</legend>
+          <ul>
+            <li>
+              <input type="checkbox" id="giftpack" name="giftpack" class="checkbox">
+       <label for="giftpack">Gift wrap</label></li>
+       <li>
+        <input type="checkbox" id="postcard
+        postcard" name="postcard" class="checkbox" checked>
+ <label for="postcard">Postcard</label>
+       </li>
+       <li>
+        <input type="checkbox" id="discount
+        discount" name="discount" class="checkbox">
+ <label for="postcard">2% discount for your next order</label>
+       </li>
+       <li>
+        <input type="checkbox" id="exlusive
+        exlusive" name="exlusive" class="checkbox" checked>
+ <label for="postcard">Exclusive Book Shelf pencil</label>
+       </li>
+          </ul>
+        </fieldset>
+        <section>
+          <p>
+            <button type="submit" class="show_modal">Place order</button>
+          </p>
+          <p>
+            <button type="reset">Reset form</button>
+          </p>
+          <p>
+            <button><a href="../Main/index.html">Back to Main Page</a></button>
+          </p>
+          <input
+          type="hidden"
+          id="timestamp"
+          name="timestamp"
+          value="1286705410"
+          />
+        </section>
+      </ul>
+    </form>
+    <!-- <button class="show_modal">Show modal</button> -->
+    <div class="modal hidden">
+      <button class="close_modal">&times;</button>
+      <p id="summary"></p>
+    </div>
+    <div class="overlay hidden"></div>
+  </body>
+</html>

@@ -1,0 +1,174 @@
+body {
+  box-sizing: border-box;
+  background-image: url(../content/buckled-book-2180047_1280.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+ul {
+  margin: 10px;
+  padding: 10px;
+  list-style: none;
+}
+
+form {
+  margin-top: 5%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 400px;
+  padding: 1em;
+  border: 5px solid #ccc;
+  border-radius: 1em;
+  background-image: url(../content/paper1.jpg);
+  background-position: center;
+  box-shadow: 0 0 10px 10px #2928267d, 0 0 10px 4px #3f3e3c7d;
+}
+
+label span {
+  display: inline-block;
+  width: 120px;
+  text-align: right;
+}
+
+input {
+  font: 1em sans-serif;
+  width: 250px;
+  box-sizing: border-box;
+  border: 1px solid #999;
+  border-radius: 5px;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  width: auto;
+  border: none;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #000;
+}
+
+/* textarea {
+  vertical-align: top;
+  height: 5em;
+  resize: vertical;
+} */
+
+fieldset {
+  width: 250px;
+  box-sizing: border-box;
+  margin-left: 10%;
+  border: 3px solid #999;
+  border-radius: 10px;
+}
+
+button {
+  /* margin: 20px 0 0 124px; */
+  /* box-shadow: 0 0 40px 40px #78797b inset, 0 0 0 0 #2a2b2c; */
+  transition: all 150ms ease-in-out;
+  /* background-color: transparent; */
+  border: 2px solid #393a3c;
+  border-radius: 0.6em;
+  cursor: pointer;
+  font-size: 0.8rem;
+  border-color: #0b1622;
+  /* color: #EEE2DC; */
+  font-weight: 100;
+  line-height: 1rem;
+  margin: 0px;
+  margin-left: 10%;
+  padding: 5px;
+  text-decoration: none;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.1rem;
+}
+button:hover {
+  box-shadow: 0 0 10px 0 #4d4f52 inset, 0 0 10px 4px #272829;
+  background-color: transparent;
+}
+button a {
+  text-decoration: none;
+  text-transform: none;
+  color: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+label {
+  position: relative;
+}
+
+input + span {
+  position: relative;
+}
+
+input + span::before {
+  position: absolute;
+  right: -20px;
+  top: 5px;
+}
+
+input:invalid {
+  border: 2px solid red;
+}
+
+input:invalid + span::before {
+  content: "✖";
+  color: red;
+}
+
+input:valid + span::before {
+  content: "✓";
+  color: green;
+}
+input:out-of-range + span::after {
+  color: white;
+  background-color: red;
+  width: 155px;
+  content: "Outside allowable value range";
+  left: -182px;
+}
+/* MODAL WINDOW*/
+.hidden {
+  display: none;
+}
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  background-image: url(../content/paper1.jpg);
+  background-size: 110%;
+  background-position: center;
+  padding: 6rem;
+  border-radius: 20px;
+  box-shadow: 0 3rem 5rem #000;
+  z-index: 10;
+  font-size: 1rem;
+}
+.show_modal {
+  color: inherit;
+}
+.close_modal {
+  position: absolute;
+  top: 1.2rem;
+  right: 2rem;
+  font-size: 5rem;
+  color: #333;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+  z-index: 5;
+}
