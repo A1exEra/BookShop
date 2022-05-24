@@ -1,6 +1,4 @@
 //////////////////////////////////////////////
-////STYLES //////////////////////////////////
-//////////////////////////////////////////////
 ////HEADER SECTOIN////////////////////////
 const header = document.createElement(`header`);
 const logo = document.createElement(`div`);
@@ -15,7 +13,7 @@ logo.classList.add(`logo`);
 header.classList.add(`header`);
 // NAVIGATION BAR////////////////
 ///DocumentFragment()/////////////
-let fragment = new DocumentFragment();
+let fragmentNav = new DocumentFragment();
 //////////////////////////////////
 const navArray = [`Collection`, `Shop`, `Contacts`];
 const navBar = document.createElement(`nav`);
@@ -30,9 +28,9 @@ navArray.forEach((el) => {
   navLink.append(el);
   navLi.append(navLink);
   navLi.classList.add(`nav-list`);
-  fragment.append(navLi);
+  fragmentNav.append(navLi);
 });
-navUl.append(fragment);
+navUl.append(fragmentNav);
 navBar.append(navUl);
 header.append(navBar);
 ///////////////////////////////////////////
@@ -60,8 +58,6 @@ catalogContainer.classList.add(`catalog_container`);
 const catalogBook = document.createElement(`div`);
 catalogBook.classList.add(`catalog_info`);
 const catalogInfo = document.createElement(`div`);
-// const catalogHeader = document.createElement(`div`);
-// catalogHeader.id = `catalog_header`;
 catalogInfo.classList.add(`catalog_info`);
 const catalogH3 = document.createElement(`h3`);
 const catalogP = document.createElement(`p`);
@@ -88,9 +84,6 @@ let jsonFragment = new DocumentFragment();
 ////////////////////////////
 function generateBooks(data) {
   for (let i = 0; i < data.length; i++) {
-    // const jsonBook = document.createElement(`div`);
-    // jsonBook.classList.add(`catalog_info`);
-    // catalogBook.append(jsonBook);
     let title = data[i].title;
     console.log(title);
     const fragmentJSON = catalogBook.insertAdjacentHTML(
@@ -102,7 +95,7 @@ function generateBooks(data) {
           <div class="book_info" id="book_text">
               <h4 class="book_title">"${data[i].title}"</h4>
               <h5 class="book_title">Author:<br>${data[i].author}</h5>
-              <h5 class="book_title">Price: ${data[i].price} GPB</h5>
+              <h5 class="book_title">Price: ${data[i].price}&pound;</h5>
               <button id="addToCart">Add to cart</button>
               <button class="open_modal">Show More</button>
               <div class="modal hidden">
@@ -155,7 +148,7 @@ function addToCart(data, i) {
     shopBookInfo.innerHTML = `<div class="book_info" id="book_text">
     <p class="book_title">"${data[i].title}"</p>
     <p class="book_title">By:<br>${data[i].author}</p>
-    <p class="book_title">Price: ${data[i].price} GPB</p>`;
+    <p class="book_title">Price: ${data[i].price}&pound;</p>`;
     removeBtn.innerHTML = `<button class="remove_shop_item">&times;</button>`;
     shopImg.classList.add(`shopImg`);
     shopImg.src = data[i].imageLink;
@@ -167,7 +160,6 @@ function addToCart(data, i) {
     totalOrder.textContent = `Total Price: ${TotalOrderCount}`;
     removeBtn.addEventListener(`click`, function (e) {
       e.preventDefault();
-      // TotalOrderCount -= data[i].price;
       removeContainer.remove();
       totalOrder.textContent = `Total Price: ${(TotalOrderCount -=
         data[i].price)}`;
@@ -179,13 +171,13 @@ function addToCart(data, i) {
   });
 }
 /////////////////////////////////////////
+//////////////////////////////////////////////
 const shoppingSection = document.createElement(`div`);
 shoppingSection.id = `shop`;
 const shoppingH3 = document.createElement(`h3`);
 shoppingH3.textContent = `Your shopping cart`;
 const shoppingList = document.createElement(`div`);
 shoppingList.classList.add(`shoppingList`);
-// const shoppingWindow = document.createElement(`div`);
 const confirmOrder = document.createElement(`button`);
 const totalOrder = document.createElement(`p`);
 totalOrder.classList.add(`totalOrder`);
@@ -238,12 +230,6 @@ footer.classList.add(`footer`);
 footer.id = `contacts`;
 footer.addEventListener(`click`, (e) => {
   e.preventDefault();
-  // const footerCoords = footer.getBoundingClientRect();
-  // window.scrollTo({
-  //   left: footerCoords.left + window.pageXOffset,
-  //   top: footerCoords.top + window.pageYOffset,
-  //   behavior: `smooth`,
-  // });
   header.scrollIntoView({ behavior: `smooth` });
 });
 ///////////////////////////////////////////////////
